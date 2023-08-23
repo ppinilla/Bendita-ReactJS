@@ -10,7 +10,8 @@ import CartWidget from './CartWidget'
 
 const NavBar = () => {
     return (
-        <div>
+        <div
+          >
             <Flex>
 
                 <Box p='4'>
@@ -20,14 +21,12 @@ const NavBar = () => {
                 <Box p='4'>
                     <Menu>
                         <MenuButton>
-                            Categories
+                            Tratamientos
                         </MenuButton>
                         <MenuList>
-                            <MenuItem>Category A</MenuItem>
-                            <MenuItem>Category B</MenuItem>
-                            <MenuItem>Category C</MenuItem>
-                            <MenuItem>Category D</MenuItem>
-                            <MenuItem>Category E</MenuItem>
+                            <MenuItem>Facial</MenuItem>
+                            <MenuItem>Corporal</MenuItem>
+                            <MenuItem>Capilar</MenuItem>
                         </MenuList>
                     </Menu>
                 </Box>
