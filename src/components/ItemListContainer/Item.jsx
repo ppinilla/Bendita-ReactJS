@@ -1,6 +1,5 @@
-import './item.css'
 import React from 'react'
-import { Box, Card, CardBody, Image, Stack, Heading, Text, Divider, Spacer } from '@chakra-ui/react'
+import { Card, CardBody, Image, Stack, Heading, Divider, Spacer, CardFooter, ButtonGroup, Button } from '@chakra-ui/react'
 
 const Item = ({ info }) => {
   return (
@@ -14,13 +13,14 @@ const Item = ({ info }) => {
           />
           <Stack mt='6' spacing='3'>
             <Heading size='md'>{info.title}</Heading>
-            <Text>{info.description}</Text>
-            <Text fontSize='2xl'>€{info.price}</Text>
+            <ButtonGroup spacing='2'>
+            <Button variant='solid' colorScheme='blue'>
+              Ver más
+            </Button>
+          </ButtonGroup>
           </Stack>
         </CardBody>
-        <Divider />
       </Card>
-      <Spacer />
     </>
   )
 }

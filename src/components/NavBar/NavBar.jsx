@@ -1,19 +1,11 @@
 import React from 'react'
-import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    Flex, Box, Spacer
-} from '@chakra-ui/react'
+import {Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer, Divider} from '@chakra-ui/react'
 import CartWidget from './CartWidget'
 
 const NavBar = () => {
     return (
-        <div
-          >
+        <div>
             <Flex>
-
                 <Box p='4'>
                     <h3>Bendita</h3>
                 </Box>
@@ -32,10 +24,11 @@ const NavBar = () => {
                 </Box>
                 <Spacer />
                 <Box p='4'>
-                    <CartWidget/>
+                    <CartWidget />
                 </Box>
-                
+
             </Flex>
+            <Divider/>
         </div>
     )
 }
