@@ -1,5 +1,6 @@
 import './itemCount.css'
 import React from 'react'
+import { Button, Divider } from '@chakra-ui/react'
 import { useState, useEffect } from 'react'
 
 const ItemCount = ({initial, stock, onAdd}) => {
@@ -20,11 +21,11 @@ const ItemCount = ({initial, stock, onAdd}) => {
 
     return (
         <div className='counter'>
-            <button className='button' disabled={count <= 1} onClick={Decrease}>-</button>
-            <span>{count}</span>
-            <button disabled={count >= stock} onClick={Increase}>+</button>
-            <div>
-                <button disabled={stock <= 0} onClick={() => onAdd(count)}>Agregar al carrito</button>
+            <Button colorScheme='blue' variant='outline' disabled={count <= 1} onClick={Decrease}>-</Button>
+            <span className='count'>{count}</span>
+            <Button colorScheme='blue' variant='outline' disabled={count >= stock} onClick={Increase}>+</Button>
+            <div className='button'>
+                <Button colorScheme='blue' variant='outline' disabled={stock <= 0} onClick={() => onAdd(count)}>Agregar al carrito</Button>
             </div>
         </div>
     )

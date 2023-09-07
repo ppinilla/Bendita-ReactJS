@@ -1,12 +1,12 @@
 import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
+import ItemCount from './ItemCount'
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Flex, Box, Spacer } from '@chakra-ui/react';
 import './itemDetail.css'
 
 const ItemDetail = ({ item }) => {
 
   const onAdd = (quantity) => {
-    //quantity en ItemListContainer es el mismo valor que count en ItemCount
+    //quantity en ItemDetail es el mismo valor que count en ItemCount
     console.log('Agregaste', quantity, 'unidades');
   }
 
@@ -29,7 +29,7 @@ const ItemDetail = ({ item }) => {
           <ButtonGroup spacing='2'>
             <Box p='4'>
               <Button variant='solid' colorScheme='blue'>
-                Buy now
+                Volver
               </Button>
             </Box>
             <Spacer />
