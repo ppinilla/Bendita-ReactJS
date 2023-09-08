@@ -2,6 +2,7 @@ import React from 'react'
 import ItemCount from './ItemCount'
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Flex, Box, Spacer } from '@chakra-ui/react';
 import './itemDetail.css'
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ item }) => {
 
@@ -28,13 +29,16 @@ const ItemDetail = ({ item }) => {
         <Flex>
           <ButtonGroup spacing='2'>
             <Box p='4'>
-              <Button variant='solid' colorScheme='blue'>
-                Volver
-              </Button>
+              <Link to={'/'}>
+                <Button variant='solid' colorScheme='blue'>
+                  Volver
+                </Button>
+              </Link>
+
             </Box>
             <Spacer />
             <Box p='4'>
-              <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+              <ItemCount initial={1} stock={10} onAdd={onAdd} />
             </Box>
           </ButtonGroup>
         </Flex>
