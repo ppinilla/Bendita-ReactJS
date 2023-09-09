@@ -3,12 +3,16 @@ import ItemCount from './ItemCount'
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Flex, Box, Spacer } from '@chakra-ui/react';
 import './itemDetail.css'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const ItemDetail = ({ item }) => {
+
+  const [cart, setCart] = useState(false)
 
   const onAdd = (quantity) => {
     //quantity en ItemDetail es el mismo valor que count en ItemCount
     console.log('Agregaste', quantity, 'unidades');
+    setCart(true)
   }
 
   return (
@@ -38,7 +42,7 @@ const ItemDetail = ({ item }) => {
             </Box>
             <Spacer />
             <Box p='4'>
-              <ItemCount initial={1} stock={10} onAdd={onAdd} />
+              {cart ? <Button colorScheme='blue' variant='outline'><Link to={'/cart'}>Finalizar compra</Link></Button> : <ItemCount initial={1} stock={10} onAdd={onAdd} />}
             </Box>
           </ButtonGroup>
         </Flex>
