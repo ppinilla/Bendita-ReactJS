@@ -3,6 +3,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer"
 import ItemListContainer from "./components/ItemListContainer"
 import NavBar from "./components/NavBar"
 import Cart from "./components/Cart"
+import CartProvider from "./context/CartContext"
 
 
 const App = () => {
@@ -10,16 +11,16 @@ const App = () => {
   return (
     <BrowserRouter>
 
-      <NavBar />
+      <CartProvider>
+        <NavBar />
 
-
-      <Routes>
-        <Route exact path='/' element={<ItemListContainer greeting={"Bienvenido a Bendita"} />}/>
-        <Route exact path='/category/:id' element={<ItemListContainer/>}/>
-        <Route exact path='/cart' element={<Cart/>}/>
-        <Route exact path='/item/:id' element={<ItemDetailContainer />}/>
-      </Routes>
-
+        <Routes>
+          <Route exact path='/' element={<ItemListContainer greeting={"Bienvenido a Bendita"} />} />
+          <Route exact path='/category/:id' element={<ItemListContainer />} />
+          <Route exact path='/cart' element={<Cart />} />
+          <Route exact path='/item/:id' element={<ItemDetailContainer />} />
+        </Routes>
+      </CartProvider>
 
     </BrowserRouter>
 

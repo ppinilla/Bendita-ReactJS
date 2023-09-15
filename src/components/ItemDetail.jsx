@@ -4,15 +4,18 @@ import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, Butto
 import './itemDetail.css'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useCartContext } from '../context/CartContext';
 
 const ItemDetail = ({ item }) => {
 
-  const [cart, setCart] = useState(false)
+  const [goToCart, setGoToCart] = useState(false);
+  const {addItem} = useCartContext();
 
   const onAdd = (quantity) => {
     //quantity en ItemDetail es el mismo valor que count en ItemCount
     console.log('Agregaste', quantity, 'unidades');
-    setCart(true)
+    setGoToCart(true);
+    addItem(item, quantity);
   }
 
   return (
@@ -42,7 +45,7 @@ const ItemDetail = ({ item }) => {
             </Box>
             <Spacer />
             <Box p='4'>
-              {cart ? <Button colorScheme='blue' variant='outline'><Link to={'/cart'}>Finalizar compra</Link></Button> : <ItemCount initial={1} stock={10} onAdd={onAdd} />}
+              {goToCart ? <Button colorScheme='blue' variant='outline'><Link to={'/cart'}>Finalizar compra</Link></Button> : <ItemCount initial={1} stock={10} onAdd={onAdd} />}
             </Box>
           </ButtonGroup>
         </Flex>
