@@ -1,8 +1,10 @@
 import { SunIcon } from '@chakra-ui/icons'
 import { Divider, Flex, Box } from '@chakra-ui/react'
 import React from 'react'
+import { useCartContext } from '../context/CartContext'
 
 const CartWidget = () => {
+  const {totalProducts} = useCartContext();
   return (
     <div>
       <Flex>
@@ -13,7 +15,7 @@ const CartWidget = () => {
         </Box>
         <Divider />
         <Box>
-          <p>6</p>
+          <span>{totalProducts() || ''}</span>
         </Box>
 
       </Flex>

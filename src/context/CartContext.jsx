@@ -11,12 +11,26 @@ const CartProvider = ({ children }) => {
     const clearCart = () => setCart([]);
     const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
     const removeItem = (id) => setCart(cart.filter(product => product.id !== id));
-    const addItem = (item, newQuantity) => {
+    /* const addItem = (item, newQuantity) => {
         const newCart = cart.filter(prod => prod.id !== item.id);
         newCart.push({ ...item, quantity: newQuantity });
         setCart(newCart)
+    } */
+    const addItem = (item, quantity) => {
+        if (isInCart(item.id)) {
+            setCart(cart.map(product => {
+                return product.id === item.id ? { ...product, quantity: product.quantity + quantity} : product
+            }));
+        } else {
+            setCart([...cart, { ...item, quantity }]);
+        }
     }
     console.log(cart);
+
+    const totalPrice = () => {
+        return cart.reduce((prev, act) => prev + act.quantity * act.price, 0);
+    }
+    const totalProducts = () => cart.reduce((acc, currentProd) => acc + currentProd.quantity, 0);
 
 
     return (
@@ -24,7 +38,10 @@ const CartProvider = ({ children }) => {
             clearCart,
             isInCart,
             removeItem,
-            addItem
+            addItem,
+            totalPrice,
+            totalProducts,
+            cart
         }} >
             {children}
         </CartContext.Provider>
