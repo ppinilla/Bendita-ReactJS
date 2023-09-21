@@ -25,7 +25,6 @@ const CartProvider = ({ children }) => {
             setCart([...cart, { ...item, quantity }]);
         }
     }
-    console.log(cart);
 
     const totalPrice = () => {
         return cart.reduce((prev, act) => prev + act.quantity * act.price, 0);
