@@ -13,22 +13,21 @@ const ItemListContainer = ({ greeting }) => {
 
   useEffect(() => {
     const db = getFirestore();
-    const itemsCollection = collection(db, 'tratamientos');
+    const itemsCollection = collection(db, 'tratamientos')
+    getDocs(itemsCollection).then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setProds(docs)
+    })
+  }, []);
 
-    if (category) {
-      const filterCollection = query(itemsCollection, where('category', '==', category))
-      getDocs(filterCollection).then(res => setProds(res.docs.map(trat => ({ id: trat.id, ...trat.data() }))))
-    } else {
-      getDocs(itemsCollection).then(res => setProds(res.docs.map(trat => ({ id: trat.id, ...trat.data() }))))
-    }
-  }, [category]);
+  const filterProds = prods.filter ((prod) => prod.category === category)
 
   return (
     <>
       <Center>
         <h1>{greeting}</h1>
       </Center>
-      <ItemList prods={prods} />
+      {category ? <ItemList prods={filterProds} /> : <ItemList prods = {prods}/>}
     </>
   )
 }

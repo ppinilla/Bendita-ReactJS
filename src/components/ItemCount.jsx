@@ -18,11 +18,6 @@ const ItemCount = ({initial, stock, onAdd}) => {
         }  
     }
 
-    //El useEffect en este caso se usa para que cada vez que cambie el valor initial, este se resetee y no haya que actualizarlo
-    useEffect(() => {
-        setCount(parseInt(initial));
-    }, [initial])
-
     return (
         <div className='counter'>
             <Button colorScheme='blue' variant='outline' /* disabled={count <= 1} */ onClick={Decrease}>-</Button>

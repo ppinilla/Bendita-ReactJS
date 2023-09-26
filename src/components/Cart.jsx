@@ -5,7 +5,7 @@ import { Button } from '@chakra-ui/react';
 import ItemCart from './ItemCart';
 
 const Cart = () => {
-  const { cart, totalPrice } = useCartContext();
+  const { cart, totalPrice, clearCart, removeItem } = useCartContext();
 
   if (cart.length === 0) {
     return (
@@ -20,7 +20,9 @@ const Cart = () => {
   return (
     <>
     {cart.map(product => <ItemCart key={product.id} product={product}/>)}
-    <p>total: ${totalPrice()}</p>
+    <Button onClick={clearCart}>Limpiar carrito</Button>
+    <p>Total: €{totalPrice()}</p>
+    <Link to='/form'><Button>Comprar ahora</Button></Link>
     </>
   )
 }

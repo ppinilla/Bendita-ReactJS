@@ -3,7 +3,7 @@ import './itemCount.css'
 import { useState, useEffect } from 'react';
 import { Button } from '@chakra-ui/react';
 
-const ItemCartCount = ({initial}) => {
+const ItemCartCount = ({initial, stock, onAdd}) => {
 
     const [count, setCount] = useState(parseInt(initial));
 
@@ -27,6 +27,7 @@ const ItemCartCount = ({initial}) => {
             <Button colorScheme='blue' variant='outline' /* disabled={count <= 1} */ onClick={Decrease}>-</Button>
             <span className='count'>{count}</span>
             <Button colorScheme='blue' variant='outline' /* disabled={count >= stock} */ onClick={Increase}>+</Button>
+            <Button colorScheme='blue' variant='outline' disabled={stock <= 10} onClick={() => onAdd(count)}>Agregar</Button>
         </div>
     )
 }
