@@ -9,7 +9,7 @@ const ItemListContainer = ({ greeting }) => {
 
   const [prods, setProds] = useState([]);
 
-  const { category } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     const db = getFirestore();
@@ -20,14 +20,14 @@ const ItemListContainer = ({ greeting }) => {
     })
   }, []);
 
-  const filterProds = prods.filter ((prod) => prod.category === category)
+  const filterProds = prods.filter ((prod) => prod.category === id)
 
   return (
     <>
       <Center>
         <h1>{greeting}</h1>
       </Center>
-      {category ? <ItemList prods={filterProds} /> : <ItemList prods = {prods}/>}
+      {id ? <ItemList prods={filterProds} /> : <ItemList prods = {prods}/>}
     </>
   )
 }

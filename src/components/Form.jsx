@@ -34,7 +34,7 @@ const Form = () => {
 
   return (
     <div>
-      <FormControl isRequired onSubmit={handleSubmit}>
+      <FormControl isRequired>
         <FormLabel>Nombre</FormLabel>
         <Input type='text' placeholder='First name' onChange={(e) => setName(e.target.value)}/>
         <FormLabel>Email</FormLabel>
@@ -43,7 +43,7 @@ const Form = () => {
         <Input type='tel' placeholder='Phone' onChange={(e) => setPhone(e.target.value)}/>
         <Button mt={4}
             colorScheme='teal'
-            type='submit'>Finalizar compra</Button>
+            type='submit'onClick={handleSubmit} >Finalizar compra</Button>
       </FormControl>
       <h3>Id de tu compra: {orderId}</h3>
     </div>
