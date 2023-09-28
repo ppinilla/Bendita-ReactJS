@@ -19,7 +19,7 @@ const Cart = () => {
 
   return (
     <>
-    {cart.map(product => <ItemCart key={product.id} product={product}/>)}
+    {cart.map((product) => <ItemCart product={product} key={product.id}/>)}
     <Button onClick={clearCart}>Limpiar carrito</Button>
     <p>Total: €{totalPrice()}</p>
     <Link to='/form'><Button>Comprar ahora</Button></Link>

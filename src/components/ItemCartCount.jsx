@@ -2,32 +2,35 @@ import React from 'react'
 import './itemCount.css'
 import { useState, useEffect } from 'react';
 import { Button } from '@chakra-ui/react';
+import { useCartContext } from '../context/CartContext';
 
-const ItemCartCount = ({initial, stock, onAdd}) => {
+const ItemCartCount = ({initial, stock}) => {
 
-    const [count, setCount] = useState(parseInt(initial));
+    const {addItem} = useCartContext();
+
+    /* const [count, setCount] = useState(parseInt(initial)); */
 
     const Decrease = () => {
         if (count > 1) {
             setCount(count - 1)
         }
     }
-    const Increase = () => {
+    /* const Increase = () => {
         if (count < 10) {
             setCount(count + 1)
         }
-    }
+    } */
     
-    useEffect(() => {
+   /*  useEffect(() => {
         setCount(parseInt(initial));
-    }, [initial])
+    }, [initial]) */
 
     return (
         <div className='counter'>
-            <Button colorScheme='blue' variant='outline' /* disabled={count <= 1} */ onClick={Decrease}>-</Button>
-            <span className='count'>{count}</span>
-            <Button colorScheme='blue' variant='outline' /* disabled={count >= stock} */ onClick={Increase}>+</Button>
-            <Button colorScheme='blue' variant='outline' disabled={stock <= 10} onClick={() => onAdd(count)}>Agregar</Button>
+            <Button className='counter-button' colorScheme='blue' variant='outline' /* disabled={count <= 1} */ onClick={Decrease}>-</Button>
+            <span className='count'>{initial.quantity}</span>
+            <Button className='counter-button' colorScheme='blue' variant='outline' onClick={() => addItem(initial)}>+</Button>
+            {/* <Button colorScheme='blue' variant='outline' disabled={stock <= 10} onClick={() => addItem(initial)}>Agregar</Button> */}
         </div>
     )
 }
