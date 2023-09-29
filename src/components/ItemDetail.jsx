@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount'
-import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Flex, Box, Spacer } from '@chakra-ui/react';
-import './itemDetail.css'
+import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Grid, GridItem, Box, Spacer, Center } from '@chakra-ui/react';
+import '../styles/itemLD.css'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useCartContext } from '../context/CartContext';
@@ -9,7 +9,7 @@ import { useCartContext } from '../context/CartContext';
 const ItemDetail = ({ item }) => {
 
   const [goToCart, setGoToCart] = useState(false);
-  const {addItem} = useCartContext();
+  const { addItem } = useCartContext();
 
   const onAdd = (quantity) => {
     //quantity en ItemDetail es el mismo valor que count en ItemCount
@@ -19,12 +19,15 @@ const ItemDetail = ({ item }) => {
   }
 
   return (
-    <Card maxW='sm' className='detail'>
+    <Card maxW='xl' className='detail'>
       <CardBody>
-        <Image
+        <Center>
+          <Image 
           src={item.pictureUrl}
           borderRadius='lg'
         />
+        </Center>
+        
         <Stack mt='6' spacing='3'>
           <Heading size='md'>{item.title}</Heading>
           <Text>{item.description}</Text>
@@ -33,23 +36,20 @@ const ItemDetail = ({ item }) => {
       </CardBody>
       <Divider />
       <CardFooter>
-        <Flex>
-          <ButtonGroup spacing='2'>
-            <Box p='4'>
-              <Link to={'/'}>
-                <Button variant='solid' colorScheme='blue'>
-                  Volver
-                </Button>
-              </Link>
-
-            </Box>
-            <Spacer />
-            <Box p='4'>
-              {goToCart ? <Button colorScheme='blue' variant='outline'><Link to={'/cart'}>Finalizar compra</Link></Button> : <ItemCount initial={1} stock={10} onAdd={onAdd} />}
-            </Box>
-          </ButtonGroup>
-        </Flex>
+        <Grid templateColumns='repeat(5,1fr)' gap={4}>
+          <GridItem colSpan={1} >
+            <Link to={'/'}>
+              <Button className='more' variant='solid' color='rgb(157, 6, 94)' backgroundColor='rgba(157, 6, 94, 0.419)' height='50px' fontSize='1.22rem'>
+                Volver
+              </Button>
+            </Link>
+          </GridItem>
+          <GridItem colStart={5} colEnd={6}>
+            {goToCart ? <Button height='50px' border='2px solid rgb(157, 6, 94)' color='rgb(157, 6, 94)' variant='outline'><Link to={'/cart'}>Finalizar compra</Link></Button> : <ItemCount initial={1} stock={10} onAdd={onAdd} />}
+          </GridItem>
+        </Grid>
       </CardFooter>
+
     </Card>
   )
 }

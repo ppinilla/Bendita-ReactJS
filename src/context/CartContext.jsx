@@ -11,11 +11,6 @@ const CartProvider = ({ children }) => {
     const clearCart = () => setCart([]);
     const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
     const removeItem = (id) => setCart(cart.filter(product => product.id !== id));
-    /* const addItem = (item, newQuantity) => {
-        const newCart = cart.filter(prod => prod.id !== item.id);
-        newCart.push({ ...item, quantity: newQuantity });
-        setCart(newCart)
-    } */
     const addItem = (item, quantity) => {
         if (isInCart(item.id)) {
             setCart(cart.map(product => {

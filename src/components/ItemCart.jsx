@@ -1,15 +1,16 @@
 import React from 'react'
-import './itemCart.css'
+import '../styles/itemCart.css'
 import { useCartContext } from '../context/CartContext'
-import ItemCount from './ItemCount'
 import { Box, Button, Flex, Spacer } from '@chakra-ui/react'
 import ItemCartCount from './ItemCartCount'
+
 
 const ItemCart = ({ product }) => {
 
     const { removeItem, totalProducts } = useCartContext()
 
     return (
+        <>
             <div className='cart' key={product.id}>
                 <Box className='img' p='4'>
                     <img src={product.pictureUrl} alt={product.title} />
@@ -30,9 +31,11 @@ const ItemCart = ({ product }) => {
                 </Box>
                 <Spacer/>
                 <Box p='4'>
-                    <Button className='delete' onClick={() => removeItem(product.id)}>Borrar</Button>
+                    <Button height='50px' border='2px solid' className='delete' onClick={() => removeItem(product.id)}>Borrar</Button>
                 </Box>
             </div>
+        </>
+        
         
 
     )

@@ -1,0 +1,44 @@
+.container-form{
+    padding: 10px;
+}
+
+.form{
+    padding: 30px;
+    border: 4px solid rgb(157, 6, 94);
+}
+
+.label{
+    text-align: center;
+    font-size: 1.22rem;
+    text-transform: capitalize;
+    padding: 10px;
+}
+
+.button-container{
+    height: 300px;
+}
+
+.buy-button{
+    font-size: 1.22rem;
+    text-transform: uppercase;
+    border: 2px solid rgb(161, 21, 91);
+}
+
+.completed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+}
+
+.text{
+    font-size: 2rem;
+}
+
+.button-completed{
+    padding: 20px;
+}
+
+.buttonC{
+    border: 2px solid;
+}

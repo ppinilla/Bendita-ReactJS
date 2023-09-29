@@ -1,21 +1,22 @@
 import React from 'react'
-import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer, Divider } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer, Divider, Image } from '@chakra-ui/react'
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
+import '../styles/navBar.css'
 
 const NavBar = () => {
     return (
         <div>
-            <Flex>
-                <Box p='4'>
+            <Flex className='navBar'>
+                <Box p='4' boxSize='100px'>
                     <Link to={'/'}>
-                        <h3>Bendita</h3>
+                            <Image src="src/img/IMG_2704.PNG" alt='Logo Bendita' />
                     </Link>
                 </Box>
                 <Spacer />
                 <Box p='4'>
-                    <Menu>
-                        <MenuButton>
+                    <Menu >
+                        <MenuButton className='tratamientos'>
                             Tratamientos
                         </MenuButton>
                         <MenuList>
@@ -32,7 +33,7 @@ const NavBar = () => {
                     </Menu>
                 </Box>
                 <Spacer />
-                <Box p='4'>
+                <Box className='icono-cart' p='4'>
                     <Link to={'/cart'}>
                         <CartWidget />
                     </Link>
@@ -40,7 +41,6 @@ const NavBar = () => {
                 </Box>
 
             </Flex>
-            <Divider />
         </div>
     )
 }

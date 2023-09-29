@@ -1,0 +1,20 @@
+/* ItemListContainer */
+
+.greeting{
+    padding: 50px 0px 40px 0px;
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgb(157, 6, 94);
+}
+
+/* Item */
+.more{
+    border: 2px solid rgb(157, 6, 94);
+}
+
+/* ItemDetail */
+.detail{
+    margin: 10px;
+}
+
+

@@ -3,10 +3,10 @@ import { useCartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom';
 import { Button } from '@chakra-ui/react';
 import ItemCart from './ItemCart';
-import './itemCart.css'
+import '../styles/itemCart.css'
 
 const Cart = () => {
-  const { cart, totalPrice, clearCart, removeItem } = useCartContext();
+  const { cart, totalPrice, clearCart} = useCartContext();
 
   if (cart.length === 0) {
     return (
@@ -22,11 +22,11 @@ const Cart = () => {
     <>
       {cart.map((product) => <ItemCart product={product} key={product.id} />)}
       <div className='buttonClear'>
-        <Button className='clearCart' onClick={clearCart}>Limpiar carrito</Button>
+        <Button height='50px' className='clearCart' onClick={clearCart}>Limpiar carrito</Button>
       </div>
       <div className='toForm'>
         <h3 className='total'>Total: €{totalPrice()}</h3>
-        <Link to='/form'><Button className='buy'>Comprar ahora</Button></Link>
+        <Link to='/form'><Button color='rgb(157, 6, 94)' backgroundColor='rgba(157, 6, 94, 0.419)' height='50px' fontSize='1.22rem' border='2px solid rgb(157, 6, 94)' className='buy'>Comprar ahora</Button></Link>
       </div>
 
     </>
