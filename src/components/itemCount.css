@@ -1,11 +1,20 @@
-.counter{
-   width: fit-content;
-   text-align: center;
+.counter {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
-.count{
-   font-size: 30px;
+
+.count {
+   font-size: 25px;
    margin: 25px;
 }
-.button{
+
+.counter-button {
+   height: 50px;
+   width: 50px;
+   text-align: center;
+}
+
+.button {
    margin: 10px;
 }
