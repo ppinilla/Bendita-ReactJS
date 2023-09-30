@@ -1,13 +1,11 @@
 import React from 'react'
 import ItemList from './ItemList'
 import { useState, useEffect } from 'react'
-import { Center, Container, Box } from '@chakra-ui/react'
 import { useParams } from 'react-router-dom'
 import { getFirestore, collection, getDocs } from 'firebase/firestore'
 import Loading from './Loading'
-import '../styles/itemLD.css'
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
 
   const [prods, setProds] = useState([]);
   const [loading, setLoading] = useState(true)
@@ -33,25 +31,6 @@ const ItemListContainer = ({ greeting }) => {
   return (
 
     <div className='item'>
-      <Box
-        display='flex'
-        alignItems='center'
-        justifyContent='center'
-        width='100%'
-        py={12}
-        bgImage="url(src/img/pexels-arina-krasnikova-6663369.jpg)"
-        bgPosition='center'
-        bgRepeat='no-repeat'
-        backgroundSize='cover'
-        mb={2}
-      >
-        <Container maxW='md'>
-          <Center className='greeting'>
-            <h1>¡{greeting}!</h1>
-          </Center>
-        </Container>
-      </Box>
-
 
       {id ? <ItemList prods={filterProds} /> : <ItemList prods={prods} />}
     </div>

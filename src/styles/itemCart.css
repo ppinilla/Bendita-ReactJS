@@ -75,6 +75,7 @@
 }
 
 .buy{
+    margin-bottom: 15px;
     width: 190px;
     text-transform: uppercase;
     border: 2px solid;

@@ -1,8 +1,24 @@
+/* NavBar */
 .tratamientos {
     padding: 20px 0px 10px 0px;
     font-size: 1.30rem;
 }
 
-.icono-cart {
-    padding: 40px 20px;
+/* Footer */
+.footer{
+   background-color: rgba(157, 6, 94, 0.616);
+}
+
+.image{
+    margin: 15px;
+}
+
+.span{
+    text-align: center;
+    margin: 10px;
+}
+
+.span-title{
+    font-size: 1.30rem;
+    text-transform: uppercase;
 }

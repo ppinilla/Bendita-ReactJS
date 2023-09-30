@@ -13,7 +13,7 @@ const Cart = () => {
       <div className='cart-empty'>
         <p className='empty'>No hay productos en tu carrito!</p>
 
-        <Link className='toItems' to='/'><Button colorScheme='blue'>Ver productos</Button></Link>
+        <Link className='toItems' to='/trat'><Button colorScheme='blue'>Ver productos</Button></Link>
       </div>
     );
   }

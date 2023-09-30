@@ -38,7 +38,7 @@ const ItemDetail = ({ item }) => {
       <CardFooter>
         <Grid templateColumns='repeat(5,1fr)' gap={4}>
           <GridItem colSpan={1} >
-            <Link to={'/'}>
+            <Link to={'/trat'}>
               <Button className='more' variant='solid' color='rgb(157, 6, 94)' backgroundColor='rgba(157, 6, 94, 0.419)' height='50px' fontSize='1.22rem'>
                 Volver
               </Button>
