@@ -23,6 +23,7 @@ const Cart = () => {
       {cart.map((product) => <ItemCart product={product} key={product.id} />)}
       <div className='buttonClear'>
         <Button height='50px' className='clearCart' onClick={clearCart}>Limpiar carrito</Button>
+        <Link to='/trat'><Button height='50px' color='rgb(157, 6, 94)' border='2px solid rgb(157, 6, 94)' margin='20px' textTransform='uppercase'>Seguir comprando</Button></Link>
       </div>
       <div className='toForm'>
         <h3 className='total'>Total: €{totalPrice()}</h3>
