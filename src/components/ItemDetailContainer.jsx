@@ -7,10 +7,6 @@ import { getFirestore, doc, getDoc } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
 
-    // 1- Traer el servicio de firestore
-    // 2- Crear un puntero al dato que queremos traer
-    // 3- Traer el dato con una promesa
-
     const [item, setItem] = useState({});
     const { id } = useParams();
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
 import { useCartContext } from '../context/CartContext'
-import { Button, FormControl, FormLabel, Input, InputGroup, InputLeftAddon, Grid, GridItem, Box, AbsoluteCenter, Center, Spacer } from '@chakra-ui/react'
+import { Button, FormControl, FormLabel, Input, InputGroup, InputLeftAddon, Grid, GridItem, Center} from '@chakra-ui/react'
 import '../styles/form.css'
 import { Link } from 'react-router-dom'
 
@@ -17,7 +17,7 @@ const Form = () => {
   const [orderId, setOrderId] = useState(null)
   const [submitted, setSubmitted] = useState(false)
   const [visible, setVisible] = useState(true)
-  const { cart, totalPrice } = useCartContext()
+  const { cart, totalPrice, clearCart } = useCartContext()
 
   const db = getFirestore();
 
@@ -27,7 +27,8 @@ const Form = () => {
       alert('Hay campos vacíos. Por favor completa todos tus datos antes de finalizar la compra.')
       return
     }
-    addDoc(ordersCollection, order).then(({ id }) => setOrderId(id), setVisible(false), setSubmitted(true))
+    addDoc(ordersCollection, order).then(({ id }) => setOrderId(id), setVisible(false), setSubmitted(true));
+    clearCart()
   }
 
 

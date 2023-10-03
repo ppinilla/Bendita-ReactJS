@@ -1,6 +1,5 @@
 import React from 'react'
 import { Spinner, Box, AbsoluteCenter } from '@chakra-ui/react'
-import '../styles/loading.css'
 
 const Loading = () => {
     return (

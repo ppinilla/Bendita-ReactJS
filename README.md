@@ -7,15 +7,26 @@
 </p>
 
 <p align="center">
-<img alt="EverShop" width="950" src="./src/img/gif.gif"/>
+<img alt="EverShop" src="./src/img/gifBendita.gif"/>
 </p>
 
-## Descripción
+## Author
+Paloma Pinilla\
+Contact: pinillapalomaok@gmail.com > [LinkedIn](https://www.linkedin.com/in/paloma-pinilla/)
 
-Bendita es una plataforma ecommerce de tratamientos estéticos basada en React hecha para el curso de React Js en CoderHouse. Posteriormente se convertirá en una plataforma ecommerce de cosméticos.
+## Description
+
+Bendita is an ecommerce platform of aesthetic treatments based on React made for the React Js course at CoderHouse. It will later become an ecommerce platform for cosmetics.
+
+## Main libraries
+| Library                                                          | Used
+| ---------------------------------------------------------------- | ------------------------- |
+| [ReactJs](https://react.dev/)                                    | JavaScript framework      |
+| [Chakra UI](https://chakra-ui.com/)                              | UI framework              |
+| [Firebase](https://firebase.google.com/?hl=es)                   | DataBase                  |
 
 <h4 align="center">
-🚧Proyecto en construcción🚧
+🚧Project under construction🚧
 </h4>
 
 

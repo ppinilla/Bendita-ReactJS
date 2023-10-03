@@ -1,6 +1,6 @@
 import React from 'react'
 import ItemCount from './ItemCount'
-import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Grid, GridItem, Box, Spacer, Center } from '@chakra-ui/react';
+import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, Button, Grid, GridItem, Center } from '@chakra-ui/react';
 import '../styles/itemLD.css'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -12,7 +12,6 @@ const ItemDetail = ({ item }) => {
   const { addItem } = useCartContext();
 
   const onAdd = (quantity) => {
-    //quantity en ItemDetail es el mismo valor que count en ItemCount
     console.log('Agregaste', quantity, 'unidades');
     setGoToCart(true);
     addItem(item, quantity);

@@ -13,7 +13,7 @@ const Cart = () => {
       <div className='cart-empty'>
         <p className='empty'>No hay productos en tu carrito!</p>
 
-        <Link className='toItems' to='/trat'><Button colorScheme='blue'>Ver productos</Button></Link>
+        <Link className='toItems' to='/trat'><Button height='50px' color='rgb(157, 6, 94)' backgroundColor='rgba(157, 6, 94, 0.419)' border='2px solid rgb(157, 6, 94)' margin='20px'>Ver productos</Button></Link>
       </div>
     );
   }

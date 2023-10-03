@@ -7,7 +7,7 @@ import ItemCartCount from './ItemCartCount'
 
 const ItemCart = ({ product }) => {
 
-    const { removeItem, totalProducts } = useCartContext()
+    const { removeItem } = useCartContext()
 
     return (
         <>
